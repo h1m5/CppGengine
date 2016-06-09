@@ -12,21 +12,20 @@ TextureCache ResourseManager::_textureCache;
 ShaderCache ResourseManager::_shaderCache;
 ModelCache ResourseManager::_modelCache;
 ViewingStateCache ResourseManager::_viewStatCache;
-std::string ResourseManager::workingDirectory;
 
 GLuint ResourseManager::getTexture(std::string texturePath, std::string directory)
 {
     return  _textureCache.getTexture(texturePath, directory);
 }
 
-StaticShader* ResourseManager::getStaticShader(std::string name, std::string dir)
+StaticShader* ResourseManager::getStaticShader(std::string name)
 {
-    return _shaderCache.getStaticShaderProgram(name, dir);
+    return _shaderCache.getStaticShaderProgram(name);
 }
 
-Model* ResourseManager::getModel(std::string name, std::string textureName, std::string dir)
+Model* ResourseManager::getModel(std::string name, std::string textureName)
 {
-    return _modelCache.getModel(name, textureName, dir);
+    return _modelCache.getModel(name, textureName);
 }
 
 ViewingState* ResourseManager::getViewState(ViewMode mode)

@@ -29,7 +29,6 @@
 		38C6FE9E1CBD1AFD004B3747 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C6FE9B1CBD19AB004B3747 /* libSDL2-2.0.0.dylib */; };
 		38C6FEA01CBD1B4F004B3747 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C6FE9F1CBD1B4F004B3747 /* OpenGL.framework */; };
 		38C6FEA41CBD1BCA004B3747 /* CrabMan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38C6FEA21CBD1BCA004B3747 /* CrabMan.cpp */; };
-		38C6FEA61CBD1E20004B3747 /* libGLEW.1.12.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C6FEA51CBD1E20004B3747 /* libGLEW.1.12.0.dylib */; };
 		38DABA461CCE47CE0012E9EF /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38DABA441CCE47CE0012E9EF /* Player.cpp */; };
 		38DABA4B1CCE55140012E9EF /* state.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38DABA491CCE55140012E9EF /* state.cpp */; };
 		38DABA4F1CD01CF80012E9EF /* modelcache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38DABA4D1CD01CF80012E9EF /* modelcache.cpp */; };
@@ -123,7 +122,6 @@
 				38900FCF1CBEB2CA001331A7 /* libSOIL.dylib in Frameworks */,
 				3823803B1CBDD6FC005B7CDE /* libSDL_image-1.2.0.dylib in Frameworks */,
 				382380391CBDD6C7005B7CDE /* libassimp.3.1.1.dylib in Frameworks */,
-				38C6FEA61CBD1E20004B3747 /* libGLEW.1.12.0.dylib in Frameworks */,
 				38C6FEA01CBD1B4F004B3747 /* OpenGL.framework in Frameworks */,
 				38C6FE9E1CBD1AFD004B3747 /* libSDL2-2.0.0.dylib in Frameworks */,
 			);
@@ -456,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -494,7 +492,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};

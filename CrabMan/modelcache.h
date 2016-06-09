@@ -17,7 +17,7 @@ public:
     ModelCache();
     ~ModelCache();
     
-    Model* getModel(std::string name, std::string textureName, std::string dir);
+    Model* getModel(std::string name, std::string textureName);
     
 private:
     std::map<std::string, Model*> _modelMap;

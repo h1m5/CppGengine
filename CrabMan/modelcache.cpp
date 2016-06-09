@@ -19,12 +19,11 @@ ModelCache::~ModelCache()
     
 }
 
-Model* ModelCache::getModel(std::string name, std::string textureName, std::string dir)
+Model* ModelCache::getModel(std::string name, std::string textureName)
 {
     
-    name = dir + "/" + name;
     if(textureName != "")
-        textureName = dir + "/" + textureName;
+        textureName = textureName;
     
     auto mit = _modelMap.find(name);
     

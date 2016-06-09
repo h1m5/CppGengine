@@ -21,10 +21,9 @@ class ResourseManager
 {
 public:
     static GLuint getTexture(std::string texturePath, std::string directory);
-    static StaticShader* getStaticShader(std::string name, std::string dir = workingDirectory);
-    static Model* getModel(std::string name, std::string textureName, std::string dir = workingDirectory);
+    static StaticShader* getStaticShader(std::string name);
+    static Model* getModel(std::string name, std::string textureName);
     static ViewingState* getViewState(ViewMode mode);
-    static std::string workingDirectory;
     
 private:
     static TextureCache _textureCache;

@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CrabMan/skyboxShader.cpp"
-            timestampString = "486667659.738747"
+            timestampString = "487208810.113896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "SkyboxShader::getAllUniforms()"
             landmarkType = "5">
          </BreakpointContent>
