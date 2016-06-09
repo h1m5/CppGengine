@@ -1,2 +1,2 @@
-dependencies: /Users/HimsDLee/Developer/CrabMan/CrabMan/state.cpp \
-  /Users/HimsDLee/Developer/CrabMan/CrabMan/state.h
+dependencies: /Users/himsDlee/Developer/CppGengine/CrabMan/state.cpp \
+  /Users/himsDlee/Developer/CppGengine/CrabMan/state.h
