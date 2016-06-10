@@ -8,10 +8,10 @@
 
 #include "shadercache.h"
 
-StaticShader* ShaderCache::getStaticShaderProgram(std::string name, std::string dir)
+StaticShader* ShaderCache::getStaticShaderProgram(std::string name)
 {
-    std::string vert = dir + "/" + name + ".vert";
-    std::string frag = dir + "/" + name + ".frag";
+    std::string vert = name + ".vert";
+    std::string frag = name + ".frag";
     
     std::cout << "is here" << std::endl;
     auto sit = staticShaderCache.find(name);

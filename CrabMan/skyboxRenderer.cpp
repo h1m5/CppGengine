@@ -16,7 +16,7 @@ std::string SkyboxRenderer::TEXTURE_FILES[] = {
 
 SkyboxRenderer::SkyboxRenderer(glm::mat4 projectionMatrix, float r, float g, float b)
 {
-    _cube = new Entity(ResourseManager::getModel("cube.obj",""), glm::vec3(0,0,0),0,0,0, SIZE);
+    _cube = new Entity(ResourseManager::getModel("res/cube.obj",""), glm::vec3(0,0,0),0,0,0, SIZE);
     
     _texture = Loader::loadCubeMap(TEXTURE_FILES);
     _shader = new SkyboxShader();

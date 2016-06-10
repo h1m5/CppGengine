@@ -10,11 +10,12 @@
 #include "ResourceManager.h"
 #include "maths.h"
 
-std::string SkyboxShader::VERTEX_FILE = "/skybox.vert";
-std::string SkyboxShader::FRAGMENT_FILE = ResourseManager::workingDirectory + "/skybox.frag";
+//std::string SkyboxShader::VERTEX_FILE = "/skybox.vert";
+//std::string SkyboxShader::FRAGMENT_FILE = ResourseManager::workingDirectory + "/skybox.frag";
+std::string SkyboxShader::VERTEX_FILE = "res/skybox.vert";
+std::string SkyboxShader::FRAGMENT_FILE = "res/skybox.frag";
 
-SkyboxShader::SkyboxShader()  : ShaderProgram(ResourseManager::workingDirectory+VERTEX_FILE,
-                                              ResourseManager::workingDirectory+FRAGMENT_FILE)
+SkyboxShader::SkyboxShader()  : ShaderProgram(VERTEX_FILE, FRAGMENT_FILE)
 {
     getAllUniforms();
 }

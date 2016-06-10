@@ -12,10 +12,9 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::string argv_str(argv[0]);
-    std::string base = argv_str.substr(0, argv_str.find_last_of("/"));
-    ResourseManager::workingDirectory = base;
-    
+//    std::string argv_str(argv[0]);
+//    std::string base = argv_str.substr(0, argv_str.find_last_of("/"));
+//    ResourseManager::workingDirectory = base;
     
     CrabMan *cr = new CrabMan();
     

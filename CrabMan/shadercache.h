@@ -16,7 +16,7 @@
 class ShaderCache{
 public:
     
-    StaticShader* getStaticShaderProgram(std::string name, std::string dir);
+    StaticShader* getStaticShaderProgram(std::string name);
     
 private:
     std::map<std::string, StaticShader*> staticShaderCache;

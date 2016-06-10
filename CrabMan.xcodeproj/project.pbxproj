@@ -16,6 +16,7 @@
 		3823804B1CBDF72E005B7CDE /* shadercache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 382380491CBDF72E005B7CDE /* shadercache.cpp */; };
 		3823804E1CBDF9D6005B7CDE /* staticshader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3823804C1CBDF9D6005B7CDE /* staticshader.cpp */; };
 		382380561CBE0125005B7CDE /* entityrenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 382380541CBE0125005B7CDE /* entityrenderer.cpp */; };
+		385379A31D0A230A009D858D /* libGLEW.1.13.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 385379A21D0A230A009D858D /* libGLEW.1.13.0.dylib */; };
 		385E95E51CD1856600FA5A2E /* inputmanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 385E95E41CD1856600FA5A2E /* inputmanager.cpp */; };
 		386231601D018AAA00B05885 /* skyboxRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3862315E1D018AAA00B05885 /* skyboxRenderer.cpp */; };
 		386231631D01CB2F00B05885 /* skyboxShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 386231621D01CB2F00B05885 /* skyboxShader.cpp */; };
@@ -28,7 +29,6 @@
 		38C6FE9E1CBD1AFD004B3747 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C6FE9B1CBD19AB004B3747 /* libSDL2-2.0.0.dylib */; };
 		38C6FEA01CBD1B4F004B3747 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C6FE9F1CBD1B4F004B3747 /* OpenGL.framework */; };
 		38C6FEA41CBD1BCA004B3747 /* CrabMan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38C6FEA21CBD1BCA004B3747 /* CrabMan.cpp */; };
-		38C6FEA61CBD1E20004B3747 /* libGLEW.1.12.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C6FEA51CBD1E20004B3747 /* libGLEW.1.12.0.dylib */; };
 		38DABA461CCE47CE0012E9EF /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38DABA441CCE47CE0012E9EF /* Player.cpp */; };
 		38DABA4B1CCE55140012E9EF /* state.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38DABA491CCE55140012E9EF /* state.cpp */; };
 		38DABA4F1CD01CF80012E9EF /* modelcache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38DABA4D1CD01CF80012E9EF /* modelcache.cpp */; };
@@ -69,6 +69,7 @@
 		382380551CBE0125005B7CDE /* entityrenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entityrenderer.h; sourceTree = "<group>"; };
 		382380571CBE0910005B7CDE /* lighting.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = lighting.vert; path = DerivedData/CrabMan/Build/Products/Debug/lighting.vert; sourceTree = SOURCE_ROOT; };
 		382380581CBE0910005B7CDE /* lighting.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = lighting.frag; path = DerivedData/CrabMan/Build/Products/Debug/lighting.frag; sourceTree = SOURCE_ROOT; };
+		385379A21D0A230A009D858D /* libGLEW.1.13.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.13.0.dylib; path = ../../../../usr/local/Cellar/glew/1.13.0/lib/libGLEW.1.13.0.dylib; sourceTree = "<group>"; };
 		385E95E31CD1750400FA5A2E /* viewStateCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = viewStateCache.h; sourceTree = "<group>"; };
 		385E95E41CD1856600FA5A2E /* inputmanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = inputmanager.cpp; sourceTree = "<group>"; };
 		3862315E1D018AAA00B05885 /* skyboxRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = skyboxRenderer.cpp; sourceTree = "<group>"; };
@@ -117,10 +118,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				385379A31D0A230A009D858D /* libGLEW.1.13.0.dylib in Frameworks */,
 				38900FCF1CBEB2CA001331A7 /* libSOIL.dylib in Frameworks */,
 				3823803B1CBDD6FC005B7CDE /* libSDL_image-1.2.0.dylib in Frameworks */,
 				382380391CBDD6C7005B7CDE /* libassimp.3.1.1.dylib in Frameworks */,
-				38C6FEA61CBD1E20004B3747 /* libGLEW.1.12.0.dylib in Frameworks */,
 				38C6FEA01CBD1B4F004B3747 /* OpenGL.framework in Frameworks */,
 				38C6FE9E1CBD1AFD004B3747 /* libSDL2-2.0.0.dylib in Frameworks */,
 			);
@@ -143,6 +144,7 @@
 		3823803C1CBDE737005B7CDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				385379A21D0A230A009D858D /* libGLEW.1.13.0.dylib */,
 				38900FCE1CBEB2CA001331A7 /* libSOIL.dylib */,
 				3823803A1CBDD6FC005B7CDE /* libSDL_image-1.2.0.dylib */,
 				382380381CBDD6C7005B7CDE /* libassimp.3.1.1.dylib */,
@@ -500,7 +502,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = $PROJECT_DIR/deps/include;
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/deps/lib";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/deps/lib",
+					/usr/local/Cellar/glew/1.13.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -509,7 +514,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = $PROJECT_DIR/deps/include;
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/deps/lib";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/deps/lib",
+					/usr/local/Cellar/glew/1.13.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
