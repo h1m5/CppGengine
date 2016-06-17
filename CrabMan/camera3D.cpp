@@ -51,7 +51,6 @@ void Camera3D::checkInput(float dt)
         _inputManager->releaseKey(SDLK_t);
     }
     
-    std::cout << "rot: " << _pitch << std::endl;
     increaseRotation(_currentPitchRotationSpeed, 0, 0);
     
     if(_pitch > 85) _pitch = 85;

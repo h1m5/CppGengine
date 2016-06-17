@@ -7,12 +7,13 @@
 //
 
 #include "Timing.hpp"
+#include <iostream>
 
 float FpsLimiter::_deltaTime = 0.0f;
 
 FpsLimiter::FpsLimiter()
 {
-    init(60.0f);
+    init(500.0f);
 }
 
 void FpsLimiter::init(float maxFPS)
@@ -22,7 +23,11 @@ void FpsLimiter::init(float maxFPS)
 
 void FpsLimiter::setMaxFPS(float maxFPS)
 {
-    _maxFPS = maxFPS;
+    if(maxFPS <= 0){
+        _maxFPS = 60;
+    } else {
+        _maxFPS = maxFPS;
+    }
 }
 
 void FpsLimiter::begin()
@@ -35,10 +40,10 @@ float FpsLimiter::end()
     calculateFPS();
     float frameTicks = SDL_GetTicks() - _startTicks;
     //Limit the FPS to the max FPS
-    //        if(1000.0f / _maxFPS > frameTicks) {
-    //            SDL_Delay(1000.0f / _maxFPS - frameTicks);
-    //        }
-    
+    if(1000.0f / _maxFPS > frameTicks) {
+        SDL_Delay(1000.0f / _maxFPS - frameTicks);
+    }
+
     return _fps;
 }
 
@@ -56,7 +61,7 @@ void FpsLimiter::calculateFPS()
     _frameTime = currentTicks - prevTicks;
     prevTicks = currentTicks;
     frameTimes[currentFrame % NUM_SAMPLES] = _frameTime;
-    _deltaTime = _frameTime/1000.0f;
+//    _deltaTime = _frameTime/1000.0f;
     
     int count;
     
@@ -73,6 +78,7 @@ void FpsLimiter::calculateFPS()
     }
     
     frameTimeAverage /= count;
+    _deltaTime = frameTimeAverage / 1000.0f;
     
     if (frameTimeAverage > 0) {
         _fps = 1000.0f / frameTimeAverage;

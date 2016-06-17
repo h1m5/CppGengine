@@ -72,7 +72,7 @@ int Window::create(std::string windowName, int screenWidth, int screenHeight, un
     //Check the Opengl Version
     printf("***    OpenGL Version: %s ***\n", glGetString(GL_VERSION));
     
-    SDL_GL_SetSwapInterval(1);
+    SDL_GL_SetSwapInterval(0);
     
     glViewport(0, 0, _screenWidth, _screenHeight);
     return 0;

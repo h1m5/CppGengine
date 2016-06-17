@@ -68,7 +68,6 @@ void CrabMan::enterLoop()
         
          camera->update(_timeKeeper->getDeltaTime());
         _window->update();
-        
         std::cout << "Frame rate: " << _timeKeeper->end() << std::endl;
     }
 }
