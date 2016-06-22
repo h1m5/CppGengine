@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		382161441D175CB500BDEA0E /* entityManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 382161421D175CB500BDEA0E /* entityManager.cpp */; };
 		3823802F1CBD304B005B7CDE /* Loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3823802D1CBD304B005B7CDE /* Loader.cpp */; };
 		382380391CBDD6C7005B7CDE /* libassimp.3.1.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 382380381CBDD6C7005B7CDE /* libassimp.3.1.1.dylib */; };
 		3823803B1CBDD6FC005B7CDE /* libSDL_image-1.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3823803A1CBDD6FC005B7CDE /* libSDL_image-1.2.0.dylib */; };
@@ -30,7 +31,6 @@
 		38C6FEA01CBD1B4F004B3747 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C6FE9F1CBD1B4F004B3747 /* OpenGL.framework */; };
 		38C6FEA41CBD1BCA004B3747 /* CrabMan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38C6FEA21CBD1BCA004B3747 /* CrabMan.cpp */; };
 		38DABA461CCE47CE0012E9EF /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38DABA441CCE47CE0012E9EF /* Player.cpp */; };
-		38DABA4B1CCE55140012E9EF /* state.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38DABA491CCE55140012E9EF /* state.cpp */; };
 		38DABA4F1CD01CF80012E9EF /* modelcache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38DABA4D1CD01CF80012E9EF /* modelcache.cpp */; };
 		38DABA511CD030C80012E9EF /* camera3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38DABA501CD030C80012E9EF /* camera3D.cpp */; };
 		38DABA551CD035A60012E9EF /* firstpersonviewstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38DABA531CD035A60012E9EF /* firstpersonviewstate.cpp */; };
@@ -49,6 +49,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3821613F1D14CC4900BDEA0E /* state.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = state.h; sourceTree = "<group>"; };
+		382161421D175CB500BDEA0E /* entityManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entityManager.cpp; sourceTree = "<group>"; };
+		382161431D175CB500BDEA0E /* entityManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = entityManager.hpp; sourceTree = "<group>"; };
 		3823802D1CBD304B005B7CDE /* Loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Loader.cpp; sourceTree = "<group>"; };
 		3823802E1CBD304B005B7CDE /* Loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Loader.h; sourceTree = "<group>"; };
 		382380331CBD3439005B7CDE /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
@@ -103,8 +106,7 @@
 		38C6FEA91CBD2080004B3747 /* subscriber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subscriber.h; sourceTree = "<group>"; };
 		38DABA441CCE47CE0012E9EF /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		38DABA451CCE47CE0012E9EF /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		38DABA491CCE55140012E9EF /* state.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = state.cpp; sourceTree = "<group>"; };
-		38DABA4A1CCE55140012E9EF /* state.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = state.h; sourceTree = "<group>"; };
+		38DABA4A1CCE55140012E9EF /* statemachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = statemachine.h; sourceTree = "<group>"; };
 		38DABA4D1CD01CF80012E9EF /* modelcache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = modelcache.cpp; sourceTree = "<group>"; };
 		38DABA4E1CD01CF80012E9EF /* modelcache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modelcache.h; sourceTree = "<group>"; };
 		38DABA501CD030C80012E9EF /* camera3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camera3D.cpp; sourceTree = "<group>"; };
@@ -130,6 +132,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		382161401D175C6600BDEA0E /* dispatchSystem */ = {
+			isa = PBXGroup;
+			children = (
+				382161421D175CB500BDEA0E /* entityManager.cpp */,
+				382161431D175CB500BDEA0E /* entityManager.hpp */,
+			);
+			name = dispatchSystem;
+			sourceTree = "<group>";
+		};
 		382380311CBD342B005B7CDE /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +255,7 @@
 		38900FD01CBEED10001331A7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				38C6FEA71CBD2053004B3747 /* ObserverPattern */,
 				38900FC31CBE0F9E001331A7 /* maths.h */,
 				38900FD21CBEED32001331A7 /* inputmanager.h */,
 				385E95E41CD1856600FA5A2E /* inputmanager.cpp */,
@@ -278,7 +290,6 @@
 				38900FD01CBEED10001331A7 /* Utilities */,
 				38900FC41CBE7DFF001331A7 /* entities */,
 				382380441CBDE8C1005B7CDE /* resourcemanager */,
-				38C6FEA71CBD2053004B3747 /* ObserverPattern */,
 				38C6FE961CBD185E004B3747 /* renderengine */,
 				38C6FEA11CBD1BA4004B3747 /* engineRunner */,
 				38C6FE8F1CBD1800004B3747 /* main.cpp */,
@@ -320,6 +331,7 @@
 		38DABA471CCE54F90012E9EF /* AI */ = {
 			isa = PBXGroup;
 			children = (
+				382161401D175C6600BDEA0E /* dispatchSystem */,
 				38DABA481CCE54FD0012E9EF /* ai_states */,
 			);
 			name = AI;
@@ -328,8 +340,8 @@
 		38DABA481CCE54FD0012E9EF /* ai_states */ = {
 			isa = PBXGroup;
 			children = (
-				38DABA491CCE55140012E9EF /* state.cpp */,
-				38DABA4A1CCE55140012E9EF /* state.h */,
+				38DABA4A1CCE55140012E9EF /* statemachine.h */,
+				3821613F1D14CC4900BDEA0E /* state.h */,
 			);
 			name = ai_states;
 			sourceTree = "<group>";
@@ -404,7 +416,7 @@
 				385E95E51CD1856600FA5A2E /* inputmanager.cpp in Sources */,
 				386231631D01CB2F00B05885 /* skyboxShader.cpp in Sources */,
 				389560801CD058E600F802B6 /* thirdpersonviewstate.cpp in Sources */,
-				38DABA4B1CCE55140012E9EF /* state.cpp in Sources */,
+				382161441D175CB500BDEA0E /* entityManager.cpp in Sources */,
 				382380561CBE0125005B7CDE /* entityrenderer.cpp in Sources */,
 				38DABA511CD030C80012E9EF /* camera3D.cpp in Sources */,
 				38C6FE901CBD1800004B3747 /* main.cpp in Sources */,

@@ -72,7 +72,7 @@ int Window::create(std::string windowName, int screenWidth, int screenHeight, un
     //Check the Opengl Version
     printf("***    OpenGL Version: %s ***\n", glGetString(GL_VERSION));
     
-    SDL_GL_SetSwapInterval(0);
+    SDL_GL_SetSwapInterval(1);
     
     glViewport(0, 0, _screenWidth, _screenHeight);
     return 0;
@@ -83,8 +83,19 @@ void Window::notifySubscribers()
     SDL_Event ev;
     
     while (SDL_PollEvent(&ev)){
+        resizeGL(ev);
         for(std::list<Subscriber*>::const_iterator i=subscribers.begin(); i!=subscribers.end(); i++){
             (*i)->update(&ev);
+        }
+    }
+}
+
+void Window::resizeGL(const SDL_Event &ev)
+{
+    if(ev.type == SDL_WINDOWEVENT){
+        if (ev.window.event == SDL_WINDOWEVENT_RESIZED) {
+            _screenWidth = ev.window.data1;
+            _screenHeight = ev.window.data2;
         }
     }
 }

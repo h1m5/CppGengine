@@ -15,7 +15,7 @@
 #include "camera3D.h"
 #include "entity.h"
 
-class EntityRenderer {
+class EntityRenderer : public Subscriber {
 public:
     EntityRenderer(StaticShader *shader);
     EntityRenderer(std::string shaderName);
@@ -27,6 +27,7 @@ public:
     void prepare();
     void createProjectionMatrix();
     void unbindTextures(Mesh* mesh);
+    void update(SDL_Event *ev);
     glm::mat4 getProjectionMatrix() { return pMatrix; }
     
 private:

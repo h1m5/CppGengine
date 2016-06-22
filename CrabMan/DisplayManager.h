@@ -30,6 +30,7 @@ public:
     static int getHeight(){return _screenHeight;}
     
     void update();
+    void resizeGL(const SDL_Event &ev);
 private:
     void swapBuffer();
     void notifySubscribers();
