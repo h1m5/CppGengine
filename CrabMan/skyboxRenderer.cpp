@@ -11,7 +11,7 @@
 
 float SkyboxRenderer::SIZE = 500.0f;
 std::string SkyboxRenderer::TEXTURE_FILES[] = {
-    "right.png", "left.png", "top.png", "bottom.png", "back.png", "front.png"
+    "res/right.png", "res/left.png", "res/top.png", "res/bottom.png", "res/back.png", "res/front.png"
 };
 
 SkyboxRenderer::SkyboxRenderer(glm::mat4 projectionMatrix, float r, float g, float b)

@@ -83,8 +83,19 @@ void Window::notifySubscribers()
     SDL_Event ev;
     
     while (SDL_PollEvent(&ev)){
+        resizeGL(ev);
         for(std::list<Subscriber*>::const_iterator i=subscribers.begin(); i!=subscribers.end(); i++){
             (*i)->update(&ev);
+        }
+    }
+}
+
+void Window::resizeGL(const SDL_Event &ev)
+{
+    if(ev.type == SDL_WINDOWEVENT){
+        if (ev.window.event == SDL_WINDOWEVENT_RESIZED) {
+            _screenWidth = ev.window.data1;
+            _screenHeight = ev.window.data2;
         }
     }
 }

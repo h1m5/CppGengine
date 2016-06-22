@@ -34,11 +34,12 @@ void CrabMan::createGameObjects()
 {
     
     renderer = new EntityRenderer("res/lighting");
+    _window->registerSubscriber(renderer);
     
     Entity *e1 = new Entity(ResourseManager::getModel("res/field.obj", ""), glm::vec3(-10,-1.5,0), 0,0,0, 1);
     _entities.push_back(e1);
-//    aPlayer = new Player("nanosuit/nanosuit.obj", "", glm::vec3(0,0,0), 0,180,0, 0.5);
-    aPlayer = new Player("res/dice/Dice_high_poly.obj", "", glm::vec3(0,0,0), 0,0,0, 2);
+    aPlayer = new Player("res/nanosuit/nanosuit.obj", "", glm::vec3(0,0,0), 0,180,0, 0.5);
+//    aPlayer = new Player("res/dice/Dice_high_poly.obj", "", glm::vec3(0,0,0), 0,0,0, 2);
     _entities.push_back(aPlayer);
     
     camera = new Camera3D(aPlayer, 30);
@@ -68,7 +69,6 @@ void CrabMan::enterLoop()
         
          camera->update(_timeKeeper->getDeltaTime());
         _window->update();
-        
         std::cout << "Frame rate: " << _timeKeeper->end() << std::endl;
     }
 }

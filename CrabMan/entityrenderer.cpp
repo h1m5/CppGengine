@@ -50,6 +50,16 @@ void EntityRenderer::unbindTextures(Mesh *mesh)
         }
 }
 
+void EntityRenderer::update(SDL_Event *ev)
+{
+    if(ev->type == SDL_WINDOWEVENT){
+        if (ev->window.event == SDL_WINDOWEVENT_RESIZED) {
+            createProjectionMatrix();
+            glViewport(0, 0, GLsizei(ev->window.data1), GLsizei(ev->window.data2));
+        }
+    }
+}
+
 void EntityRenderer::render(Entity *entity, Camera* camera, std::vector<Light*> &lights)
 {
     prepare();
@@ -92,6 +102,9 @@ void EntityRenderer::createProjectionMatrix()
 {
     pMatrix = glm::mat4();
     pMatrix = glm::perspective(FOV, (GLfloat)Window::getWidth()/Window::getHeight(), 0.1f, 1000.0f);
+    _shader->start();
+    _shader->loadProjectionMatrix(pMatrix);
+    _shader->stop();
 }
 
 void EntityRenderer::enableCulling()
