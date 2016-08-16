@@ -13,7 +13,7 @@ float FpsLimiter::_deltaTime = 0.0f;
 
 FpsLimiter::FpsLimiter()
 {
-    init(70.0f);
+    init(0.0f);
 }
 
 void FpsLimiter::init(float maxFPS)

@@ -16,7 +16,7 @@
 
 class Player : public Entity {
 public:
-    
+    /// Player
     Player(std::string modelName, std::string textureName = "", glm::vec3 position = glm::vec3(0,0,0), float rx=0, float ry=0, float rz=0, float scale=0.3);
     void update(float dt);
     ViewingState *getViewMode() { return _viewingMode; }

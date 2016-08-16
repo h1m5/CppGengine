@@ -28,7 +28,7 @@ void Player::update(float dt)
 
 void Player::jump(float dt)
 {
-    upwardSpeed += -80.0f * dt;
+    upwardSpeed += -90.0f * dt;
     increasePosition(0, upwardSpeed * dt, 0);
     if(_position.y < 0){
         _position.y = 0;
@@ -51,7 +51,7 @@ void Player::move(float dt)
         currentTurnSpeed = Maths::interpolate(currentTurnSpeed, -900.0f, dt);
     }
     if(_inputManager->isPressed(SDLK_SPACE)){
-        upwardSpeed = 20;
+        upwardSpeed = 40;
     }
     
     float distance = currentMoveSpeed * dt;
