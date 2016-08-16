@@ -36,7 +36,6 @@ private:
     SkyboxRenderer *skbRenderer;
     Camera3D *camera;
     FpsLimiter* _timeKeeper;
-    Light *light0;
     std::vector<Light*> lights;
     Model *aModel;
     Model *plane;

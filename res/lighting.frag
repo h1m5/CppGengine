@@ -39,6 +39,8 @@ void main()
         vec3 lightDirection = normalize(vertToLight[i]);
         float NdotL = max(dot(normal, lightDirection), 0.2f);
         float level = floor(NdotL * levels);
+        
+        ///uncomment this line to turn on cel shading
 //        NdotL = level / levels;
         
         vec4 texDif = texture(texDiffuse,uv);
@@ -47,7 +49,10 @@ void main()
         vec3 halfVector = normalize(normalize(vertToCamera) + lightDirection);
         float NdotHV = max(dot(normal, halfVector), 0.0f);
         level = floor(NdotHV * levels);
+        
+        ///uncomment this line to turn on cel shading
 //        NdotHV = level/levels;
+        
         float specHighlight = pow(NdotHV, shininess);
         
         vec4 texSpec = texture(texSpecular,uv);

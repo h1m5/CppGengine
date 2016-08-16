@@ -10,8 +10,8 @@ uniform samplerCube cubeMap2;
 uniform float blendFactor;
 uniform vec3 fogColour;
 
-const float lowerLimit = 0.0f;
-const float upperLimit = 0.5f;
+const float lowerLimit = -0.3f;
+const float upperLimit = -0.1f;
 
 void main()
 {
@@ -23,4 +23,5 @@ void main()
     factor = clamp(factor, 0.0, 1.0);
     
     fragColor = mix(vec4(fogColour, 1.0f), texColor1, factor);
+//    fragColor = texColor1;
 }

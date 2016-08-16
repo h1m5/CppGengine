@@ -9,6 +9,7 @@
 #include "CrabMan.h"
 #include "Loader.h"
 #include "ResourceManager.h"
+#include "fontrenderer.h"
 
 CrabMan::CrabMan()
 {
@@ -36,17 +37,19 @@ void CrabMan::createGameObjects()
     renderer = new EntityRenderer("res/lighting");
     _window->registerSubscriber(renderer);
     
-    Entity *e1 = new Entity(ResourseManager::getModel("res/field.obj", ""), glm::vec3(-10,-1.5,0), 0,0,0, 1);
+    Entity *e1 = new Entity(ResourseManager::getModel("res/field.obj", ""), glm::vec3(-10,-1.5,0), 0,0,0, 2);
     _entities.push_back(e1);
     aPlayer = new Player("res/nanosuit/nanosuit.obj", "", glm::vec3(0,0,0), 0,180,0, 0.5);
 //    aPlayer = new Player("res/dice/Dice_high_poly.obj", "", glm::vec3(0,0,0), 0,0,0, 2);
     _entities.push_back(aPlayer);
     
     camera = new Camera3D(aPlayer, 30);
-    light0 = new Light(glm::vec3(10,10,10), glm::vec3(0.5, 0.6, 0.7), glm::vec3(1.0f, 0.01f, 0.002f));
+    Light *light0 = new Light(glm::vec3(10,20,10), glm::vec3(0.5, 0.6, 0.7));
     Light *light1 = new Light(glm::vec3(-10,10,-10), glm::vec3(0.5, 0.6, 0.7), glm::vec3(1.0f, 0.01f, 0.002f));
     lights.push_back(light0);
     lights.push_back(light1);
+    
+    FontRenderer::sharedInstance()->init("res/textShader", "res/fonts/bubblegum.ttf");
     
     skbRenderer = new SkyboxRenderer(renderer->getProjectionMatrix());
 }
@@ -66,6 +69,8 @@ void CrabMan::enterLoop()
         }
         
         skbRenderer->render(camera);
+        
+        FontRenderer::sharedInstance()->renderText("A Sample text", 0.0f, 0.0f, 2.0f, glm::vec3(1.0f, 1.0f, 0.5f));
         
          camera->update(_timeKeeper->getDeltaTime());
         _window->update();

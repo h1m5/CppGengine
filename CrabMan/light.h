@@ -12,6 +12,7 @@
 
 class Light{
 public:
+    /// Light that's defined by position, color, attenuation
     Light(glm::vec3 position, glm::vec3 color, glm::vec3 attenuation = glm::vec3(1, 0, 0))
     {
         _position = position;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380142801D627BC50078035B /* fontrenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3801427F1D627BC50078035B /* fontrenderer.cpp */; };
+		380142831D6283CA0078035B /* fontShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380142811D6283CA0078035B /* fontShader.cpp */; };
 		382161441D175CB500BDEA0E /* entityManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 382161421D175CB500BDEA0E /* entityManager.cpp */; };
 		3823802F1CBD304B005B7CDE /* Loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3823802D1CBD304B005B7CDE /* Loader.cpp */; };
 		382380391CBDD6C7005B7CDE /* libassimp.3.1.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 382380381CBDD6C7005B7CDE /* libassimp.3.1.1.dylib */; };
@@ -17,10 +19,12 @@
 		3823804B1CBDF72E005B7CDE /* shadercache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 382380491CBDF72E005B7CDE /* shadercache.cpp */; };
 		3823804E1CBDF9D6005B7CDE /* staticshader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3823804C1CBDF9D6005B7CDE /* staticshader.cpp */; };
 		382380561CBE0125005B7CDE /* entityrenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 382380541CBE0125005B7CDE /* entityrenderer.cpp */; };
+		384F31B91D2DE69400654EBE /* messageDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 384F31B71D2DE69400654EBE /* messageDispatcher.cpp */; };
 		385379A31D0A230A009D858D /* libGLEW.1.13.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 385379A21D0A230A009D858D /* libGLEW.1.13.0.dylib */; };
 		385E95E51CD1856600FA5A2E /* inputmanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 385E95E41CD1856600FA5A2E /* inputmanager.cpp */; };
 		386231601D018AAA00B05885 /* skyboxRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3862315E1D018AAA00B05885 /* skyboxRenderer.cpp */; };
 		386231631D01CB2F00B05885 /* skyboxShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 386231621D01CB2F00B05885 /* skyboxShader.cpp */; };
+		38718A9A1D61F34400CD16D9 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D594CC1D61EFE500547625 /* libfreetype.6.dylib */; };
 		38900FCF1CBEB2CA001331A7 /* libSOIL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38900FCE1CBEB2CA001331A7 /* libSOIL.dylib */; };
 		38900FD61CBEF4C1001331A7 /* Timing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38900FD41CBEF4C1001331A7 /* Timing.cpp */; };
 		38900FDC1CBF0F50001331A7 /* entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38900FDA1CBF0F50001331A7 /* entity.cpp */; };
@@ -49,6 +53,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3801427D1D624A230078035B /* textShader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = textShader.vert; path = res/textShader.vert; sourceTree = SOURCE_ROOT; };
+		3801427E1D624A320078035B /* textShader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = textShader.frag; path = res/textShader.frag; sourceTree = SOURCE_ROOT; };
+		3801427F1D627BC50078035B /* fontrenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fontrenderer.cpp; sourceTree = "<group>"; };
+		380142811D6283CA0078035B /* fontShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fontShader.cpp; sourceTree = "<group>"; };
+		380142821D6283CA0078035B /* fontShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fontShader.h; sourceTree = "<group>"; };
 		3821613F1D14CC4900BDEA0E /* state.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = state.h; sourceTree = "<group>"; };
 		382161421D175CB500BDEA0E /* entityManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entityManager.cpp; sourceTree = "<group>"; };
 		382161431D175CB500BDEA0E /* entityManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = entityManager.hpp; sourceTree = "<group>"; };
@@ -70,8 +79,9 @@
 		3823804D1CBDF9D6005B7CDE /* staticshader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = staticshader.h; sourceTree = "<group>"; };
 		382380541CBE0125005B7CDE /* entityrenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entityrenderer.cpp; sourceTree = "<group>"; };
 		382380551CBE0125005B7CDE /* entityrenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entityrenderer.h; sourceTree = "<group>"; };
-		382380571CBE0910005B7CDE /* lighting.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = lighting.vert; path = DerivedData/CrabMan/Build/Products/Debug/lighting.vert; sourceTree = SOURCE_ROOT; };
-		382380581CBE0910005B7CDE /* lighting.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = lighting.frag; path = DerivedData/CrabMan/Build/Products/Debug/lighting.frag; sourceTree = SOURCE_ROOT; };
+		384F31B71D2DE69400654EBE /* messageDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = messageDispatcher.cpp; sourceTree = "<group>"; };
+		384F31B81D2DE69400654EBE /* messageDispatcher.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = messageDispatcher.hpp; sourceTree = "<group>"; };
+		384F31BA1D2DE71700654EBE /* telegram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = telegram.h; sourceTree = "<group>"; };
 		385379A21D0A230A009D858D /* libGLEW.1.13.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.13.0.dylib; path = ../../../../usr/local/Cellar/glew/1.13.0/lib/libGLEW.1.13.0.dylib; sourceTree = "<group>"; };
 		385E95E31CD1750400FA5A2E /* viewStateCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = viewStateCache.h; sourceTree = "<group>"; };
 		385E95E41CD1856600FA5A2E /* inputmanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = inputmanager.cpp; sourceTree = "<group>"; };
@@ -79,8 +89,6 @@
 		3862315F1D018AAA00B05885 /* skyboxRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skyboxRenderer.h; sourceTree = "<group>"; };
 		386231611D01C8DA00B05885 /* skyboxShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skyboxShader.h; sourceTree = "<group>"; };
 		386231621D01CB2F00B05885 /* skyboxShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = skyboxShader.cpp; sourceTree = "<group>"; };
-		386231661D01D15400B05885 /* skybox.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = skybox.frag; path = DerivedData/CrabMan/Build/Products/Debug/skybox.frag; sourceTree = SOURCE_ROOT; };
-		386231671D01D15400B05885 /* skybox.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = skybox.vert; path = DerivedData/CrabMan/Build/Products/Debug/skybox.vert; sourceTree = SOURCE_ROOT; };
 		38900FC31CBE0F9E001331A7 /* maths.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maths.h; sourceTree = "<group>"; };
 		38900FC61CBE890B001331A7 /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
 		38900FC81CBE89E4001331A7 /* camera3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera3D.h; sourceTree = "<group>"; };
@@ -104,6 +112,12 @@
 		38C6FEA51CBD1E20004B3747 /* libGLEW.1.12.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.12.0.dylib; path = deps/lib/libGLEW.1.12.0.dylib; sourceTree = "<group>"; };
 		38C6FEA81CBD2074004B3747 /* publisher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = publisher.h; sourceTree = "<group>"; };
 		38C6FEA91CBD2080004B3747 /* subscriber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subscriber.h; sourceTree = "<group>"; };
+		38D594C81D6089E800547625 /* skybox.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = skybox.frag; path = res/skybox.frag; sourceTree = SOURCE_ROOT; };
+		38D594C91D6089E800547625 /* skybox.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = skybox.vert; path = res/skybox.vert; sourceTree = SOURCE_ROOT; };
+		38D594CA1D6089E800547625 /* lighting.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = lighting.frag; path = res/lighting.frag; sourceTree = SOURCE_ROOT; };
+		38D594CB1D6089E800547625 /* lighting.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = lighting.vert; path = res/lighting.vert; sourceTree = SOURCE_ROOT; };
+		38D594CC1D61EFE500547625 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = ../../../../usr/local/Cellar/freetype/2.6.3/lib/libfreetype.6.dylib; sourceTree = "<group>"; };
+		38D594D01D61F15700547625 /* fontrenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fontrenderer.h; sourceTree = "<group>"; };
 		38DABA441CCE47CE0012E9EF /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		38DABA451CCE47CE0012E9EF /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		38DABA4A1CCE55140012E9EF /* statemachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = statemachine.h; sourceTree = "<group>"; };
@@ -120,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38718A9A1D61F34400CD16D9 /* libfreetype.6.dylib in Frameworks */,
 				385379A31D0A230A009D858D /* libGLEW.1.13.0.dylib in Frameworks */,
 				38900FCF1CBEB2CA001331A7 /* libSOIL.dylib in Frameworks */,
 				3823803B1CBDD6FC005B7CDE /* libSDL_image-1.2.0.dylib in Frameworks */,
@@ -135,8 +150,11 @@
 		382161401D175C6600BDEA0E /* dispatchSystem */ = {
 			isa = PBXGroup;
 			children = (
+				384F31BA1D2DE71700654EBE /* telegram.h */,
 				382161421D175CB500BDEA0E /* entityManager.cpp */,
 				382161431D175CB500BDEA0E /* entityManager.hpp */,
+				384F31B71D2DE69400654EBE /* messageDispatcher.cpp */,
+				384F31B81D2DE69400654EBE /* messageDispatcher.hpp */,
 			);
 			name = dispatchSystem;
 			sourceTree = "<group>";
@@ -155,6 +173,7 @@
 		3823803C1CBDE737005B7CDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38D594CC1D61EFE500547625 /* libfreetype.6.dylib */,
 				385379A21D0A230A009D858D /* libGLEW.1.13.0.dylib */,
 				38900FCE1CBEB2CA001331A7 /* libSOIL.dylib */,
 				3823803A1CBDD6FC005B7CDE /* libSDL_image-1.2.0.dylib */,
@@ -176,6 +195,8 @@
 				3823804C1CBDF9D6005B7CDE /* staticshader.cpp */,
 				3823804A1CBDF72E005B7CDE /* shadercache.h */,
 				382380491CBDF72E005B7CDE /* shadercache.cpp */,
+				380142811D6283CA0078035B /* fontShader.cpp */,
+				380142821D6283CA0078035B /* fontShader.h */,
 			);
 			name = shadermanager;
 			sourceTree = "<group>";
@@ -205,10 +226,12 @@
 		3823804F1CBDFFD8005B7CDE /* shaders */ = {
 			isa = PBXGroup;
 			children = (
-				382380571CBE0910005B7CDE /* lighting.vert */,
-				382380581CBE0910005B7CDE /* lighting.frag */,
-				386231661D01D15400B05885 /* skybox.frag */,
-				386231671D01D15400B05885 /* skybox.vert */,
+				38D594C81D6089E800547625 /* skybox.frag */,
+				38D594C91D6089E800547625 /* skybox.vert */,
+				38D594CA1D6089E800547625 /* lighting.frag */,
+				38D594CB1D6089E800547625 /* lighting.vert */,
+				3801427D1D624A230078035B /* textShader.vert */,
+				3801427E1D624A320078035B /* textShader.frag */,
 			);
 			name = shaders;
 			sourceTree = "<group>";
@@ -306,6 +329,8 @@
 				3823802E1CBD304B005B7CDE /* Loader.h */,
 				382380541CBE0125005B7CDE /* entityrenderer.cpp */,
 				382380551CBE0125005B7CDE /* entityrenderer.h */,
+				38D594D01D61F15700547625 /* fontrenderer.h */,
+				3801427F1D627BC50078035B /* fontrenderer.cpp */,
 			);
 			name = renderengine;
 			sourceTree = "<group>";
@@ -402,10 +427,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384F31B91D2DE69400654EBE /* messageDispatcher.cpp in Sources */,
 				38DABA551CD035A60012E9EF /* firstpersonviewstate.cpp in Sources */,
 				382380431CBDE865005B7CDE /* ResourceManager.cpp in Sources */,
 				3823804B1CBDF72E005B7CDE /* shadercache.cpp in Sources */,
 				382380481CBDED68005B7CDE /* shaderprogram.cpp in Sources */,
+				380142831D6283CA0078035B /* fontShader.cpp in Sources */,
 				38C6FE991CBD18BD004B3747 /* DisplayManager.cpp in Sources */,
 				38C6FEA41CBD1BCA004B3747 /* CrabMan.cpp in Sources */,
 				382380421CBDE865005B7CDE /* TextureCache.cpp in Sources */,
@@ -421,6 +448,7 @@
 				38DABA511CD030C80012E9EF /* camera3D.cpp in Sources */,
 				38C6FE901CBD1800004B3747 /* main.cpp in Sources */,
 				38DABA461CCE47CE0012E9EF /* Player.cpp in Sources */,
+				380142801D627BC50078035B /* fontrenderer.cpp in Sources */,
 				386231601D018AAA00B05885 /* skyboxRenderer.cpp in Sources */,
 				38DABA4F1CD01CF80012E9EF /* modelcache.cpp in Sources */,
 			);
@@ -513,10 +541,14 @@
 		38C6FE941CBD1800004B3747 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = $PROJECT_DIR/deps/include;
+				HEADER_SEARCH_PATHS = (
+					$PROJECT_DIR/deps/include,
+					$PROJECT_DIR/deps/include/freetype2,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/deps/lib",
 					/usr/local/Cellar/glew/1.13.0/lib,
+					/usr/local/Cellar/freetype/2.6.3/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -525,10 +557,14 @@
 		38C6FE951CBD1800004B3747 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = $PROJECT_DIR/deps/include;
+				HEADER_SEARCH_PATHS = (
+					$PROJECT_DIR/deps/include,
+					$PROJECT_DIR/deps/include/freetype2,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/deps/lib",
 					/usr/local/Cellar/glew/1.13.0/lib,
+					/usr/local/Cellar/freetype/2.6.3/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

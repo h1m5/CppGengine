@@ -25,9 +25,6 @@ EntityRenderer::EntityRenderer(std::string shaderName)
 {
     _shader = ResourseManager::getStaticShader(shaderName);
     createProjectionMatrix();
-    _shader->start();
-    _shader->loadProjectionMatrix(pMatrix);
-    _shader->stop();
     enableCulling();
 }
 
@@ -94,8 +91,8 @@ void EntityRenderer::prepare()
     
     //Enable multisampling
     glEnable(GL_MULTISAMPLE);
-//    glEnable(GL_BLEND);
-//    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void EntityRenderer::createProjectionMatrix()

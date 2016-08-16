@@ -31,6 +31,8 @@ public:
     Model* getModel() { return _model; }
     ViewingState* getViewingMode() { return _viewingMode; }
     
+    int ID()const{return m_ID;}
+    
 protected:
     Model *_model;
     glm::vec3 _position;
@@ -39,6 +41,8 @@ protected:
     int _textureIndex; // used for texture atlasing
     
     ViewingState* _viewingMode; // The way the camera should view the object if attached to the camera
+    
+    int m_ID;
 };
 
 #endif /* entity_h */

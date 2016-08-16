@@ -12,14 +12,7 @@
 #include <stdio.h>
 #include <map>
 #include "entity.h"
-
-struct Telegram {
-    int sender;
-    int receiver;
-    int msg;
-    double dispatchTime;
-    void* extraInfo;
-};
+#include "telegram.h"
 
 class EntityManager {
     typedef std::map<int, Entity*> EntityMap;
@@ -38,7 +31,6 @@ public:
     
     void removeEntity(Entity* e);
 };
-
 
 #define EntityMgr EntityManager::instance()
 #endif /* entityManager_hpp */
