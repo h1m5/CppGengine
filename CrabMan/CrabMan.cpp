@@ -70,7 +70,7 @@ void CrabMan::enterLoop()
         
         skbRenderer->render(camera);
         
-        FontRenderer::sharedInstance()->renderText("A Sample text", 0.0f, 0.0f, 2.0f, glm::vec3(1.0f, 1.0f, 0.5f));
+        FontRenderer::sharedInstance()->renderText("A Sample text", float(Window::getWidth())/2, float(Window::getHeight())/2, 2.0f, glm::vec3(1.0f, 1.0f, 0.5f));
         
          camera->update(_timeKeeper->getDeltaTime());
         _window->update();

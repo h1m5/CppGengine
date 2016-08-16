@@ -20,7 +20,6 @@ void FontRenderer::init(std::string shaderName, std::string fontName)
 {
 //    _shader = ResourseManager::getStaticShader(shaderName);
     _shader = new FontShader(shaderName + ".vert", shaderName + ".frag");
-    createProjectionMatrix();
     enableBlending();
     loadFont(fontName.c_str());
     configureTextureQuad();
@@ -28,6 +27,7 @@ void FontRenderer::init(std::string shaderName, std::string fontName)
 
 void FontRenderer::renderText(std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color)
 {
+    createProjectionMatrix();
     _shader->start();
     _shader->loadTextColor(color.x, color.y, color.z);
     glActiveTexture(GL_TEXTURE0);
@@ -58,8 +58,8 @@ void FontRenderer::renderText(std::string text, GLfloat x, GLfloat y, GLfloat sc
         glBindBuffer(GL_ARRAY_BUFFER, VBO);
         glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
         
-        glDrawArrays(GL_TRIANGLES, 0, 6);
         glBindBuffer(GL_ARRAY_BUFFER, 0);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
         
         x += (ch.Advance >> 6) * scale;
     }
@@ -81,7 +81,7 @@ void FontRenderer::createProjectionMatrix()
 void FontRenderer::enableBlending()
 {
     glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glBlendFunc(GL_SRC_ALPHA, GL_ZERO);
 }
 
 void FontRenderer::configureTextureQuad()
