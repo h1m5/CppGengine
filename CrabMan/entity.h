@@ -14,6 +14,7 @@
 #include "Loader.h"
 #include "viewStateCache.h"
 
+class Particle;
 class Entity {
 public:
     
@@ -21,17 +22,28 @@ public:
     
     void increasePosition(float dx, float dy, float dz);
     void increaseRotation(float rx, float ry, float rz);
+    void setRotation(float rx, float ry, float rz);
+    void setPosition(float x, float y, float z);
+    
     virtual void setViewMode(ViewMode viewMode = ViewMode::ThirdPerson){}
+    
     glm::vec3 getPosition() { return _position; }
+    
+    
     int getTextureId() { return _textureIndex; }
+    
     float getScale() { return _scale; }
     float getRotX() { return _rx; }
     float getRotY() { return _ry; }
     float getRotZ() { return _rz; }
+    
     Model* getModel() { return _model; }
+    
     ViewingState* getViewingMode() { return _viewingMode; }
     
     int ID()const{return m_ID;}
+    
+    Particle *getParticle() { return _particle; }
     
 protected:
     Model *_model;
@@ -43,6 +55,8 @@ protected:
     ViewingState* _viewingMode; // The way the camera should view the object if attached to the camera
     
     int m_ID;
+    
+    Particle *_particle = nullptr;
 };
 
 #endif /* entity_h */

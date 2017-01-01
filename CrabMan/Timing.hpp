@@ -24,6 +24,8 @@ public:
     // end will return the current FPS
     float end();
     
+    float getFPS();
+    
     static float getDeltaTime() {return _deltaTime;}
     
 private:

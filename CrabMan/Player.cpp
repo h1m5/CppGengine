@@ -9,15 +9,18 @@
 #include "Player.h"
 #include "ResourceManager.h"
 #include "loader.h"
+#include "particle.h"
 
-Player::Player(std::string modelName, std::string textureName, glm::vec3 position, float rx, float ry, float rz, float scale)
-: Entity(ResourseManager::getModel(modelName, textureName), position, rx, ry, rz, scale)
+Player::Player(std::string modelName, std::string textureName, glm::vec3 position, float rx, float ry, float rz, float scale, float mass)
+: MovingEntity(ResourseManager::getModel(modelName, textureName), position, rx, ry, rz, scale)
 {
     currentMoveSpeed = 0.0f;
     currentTurnSpeed = 0.0f;
     acceleration = 300.0f;
     upwardSpeed = 0.0f;
     _viewingMode = ResourseManager::getViewState(ViewMode::ThirdPerson);
+    
+    _particle = new Particle(*this, mass);
 }
 
 void Player::update(float dt)

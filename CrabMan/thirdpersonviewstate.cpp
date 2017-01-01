@@ -46,6 +46,7 @@ void ThirdPersonViewState::calculatePosition(Camera3D *camera, float dt)
                                rf->getPosition().z - offsetZ);
     doTransition(dt, newPosition);
     camera->setPosition(_deltaPosition);
+//    camera->setPosition(newPosition);
     
     camera->setRotation(camera->getPitch(), 90 - rf->getRotY());
 }

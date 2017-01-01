@@ -9,7 +9,6 @@
 #ifndef CrabMan_h
 #define CrabMan_h
 
-#include <stdio.h>
 #include "DisplayManager.h"
 #include "entityrenderer.h"
 #include "camera3D.h"
@@ -18,9 +17,12 @@
 #include "Player.h"
 #include <vector>
 #include "skyboxRenderer.h"
+#include "particleforceregistry.h"
+#include "particledrag.h"
 
 enum class STATE { PLAY, QUIT };
 
+class Vehicle;
 class CrabMan : public Subscriber{
 public:
     CrabMan();
@@ -30,16 +32,19 @@ public:
 private:
     void init();
     void createGameObjects();
+    void runGraphicsUpdate();
+    
     STATE gameState;
     Window *_window;
     EntityRenderer *renderer;
-    SkyboxRenderer *skbRenderer;
+    SkyboxRenderer *skyBoxRenderer;
     Camera3D *camera;
     FpsLimiter* _timeKeeper;
     std::vector<Light*> lights;
     Model *aModel;
     Model *plane;
     Player *aPlayer;
+    Vehicle *agent;
     std::vector<Entity*> _entities;
 };
 

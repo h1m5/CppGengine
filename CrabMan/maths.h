@@ -9,12 +9,14 @@
 #ifndef maths_h
 #define maths_h
 
-#include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/quaternion.hpp>
+#include <glm/gtx/perpendicular.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 class Maths {
 public:
+    
     static glm::mat4 createTransformationMatrix(glm::vec3 translation, float rx, float ry, float rz, float scale)
     {
         glm::mat4 mMatrix = glm::mat4();
@@ -41,8 +43,8 @@ public:
     
     static glm::vec2 resultant(glm::vec2 v1, glm::vec2 v2)
     {
-        float xs = v1.x + v2.x;
-        float ys = v1.y + v2.y;
+//        float xs = v1.x + v2.x;
+//        float ys = v1.y + v2.y;
 //        return sqrt(xs*xs + ys*ys);
         return v1 + v2;
     }
@@ -55,6 +57,13 @@ public:
         resolution.x = v * dot;
         resolution.y = v * glm::sin(theta);
         return resolution;
+    }
+    
+    static void truncate(glm::vec3 &vec, float value)
+    {
+        vec.x = vec.x > value ? value : vec.x;
+        vec.y = vec.y > value ? value : vec.y;
+        vec.z = vec.z > value ? value : vec.z;
     }
 };
 

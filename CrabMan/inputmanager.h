@@ -38,6 +38,19 @@ public:
         return false;
     }
     
+    bool noKeyPressed()
+    {
+        bool pressed = true;
+        for(std::map<uint, bool>::iterator it=_keyMap.begin();
+            it!=_keyMap.end(); ++it)
+        {
+            if (it->second == true)
+                pressed = false;
+        }
+        
+        return pressed;
+    }
+    
     void update(SDL_Event *ev){
         switch(ev->type){
             case SDL_KEYDOWN: pressKey(ev->key.keysym.sym); break;

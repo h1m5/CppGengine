@@ -81,7 +81,7 @@ glm::mat4 Camera3D::createViewMatrix()
     glm::vec3 center = _position + _front;
     vmatrix = glm::lookAt(_position, center, _up);
 //    vmatrix = glm::rotate(vmatrix, _pitch, glm::vec3(1,0,0));
-//    vmatrix = glm::rotate(vmatrix, _yaw, glm::vec3(0,1,0));
+//    vmatrix = glm::rotate(vmatrix, 90 + _yaw, glm::vec3(0,1,0));
 //    glm::vec3 pos = -_position;
 //    vmatrix = glm::translate(vmatrix, pos);
     return vmatrix;

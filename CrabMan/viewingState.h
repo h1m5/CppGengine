@@ -18,7 +18,7 @@ protected:
     float _distanceFromSubject;
     glm::vec3 _deltaPosition;
     float _transitionSpeed;
-    void doTransition(float dt, glm::vec3 goal){
+    inline void doTransition(float dt, glm::vec3 goal){
         _deltaPosition = Maths::interpolate(_deltaPosition, goal, dt+_transitionSpeed);
     }
     

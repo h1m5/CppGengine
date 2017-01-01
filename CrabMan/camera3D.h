@@ -20,6 +20,7 @@
 class Camera3D : public Camera {
 public:
     Camera3D(){}
+    Camera3D* clone() { return new Camera3D(); }
     Camera3D(Entity *referencePointObject, float rx=0, float ry=0, float rz=0);
     
     virtual void update(float dt);
@@ -48,6 +49,7 @@ protected:
     float _currentPitchRotationSpeed;
 //    FirstPersonViewState *fps;
 //    ThirdPersonViewState *tps;
+    
     float _pitch;
     float _yaw;
     float _roll;

@@ -10,8 +10,8 @@
 #define statemachine_h
 
 #include <stdio.h>
-#include <assert>
-#include "state.h"
+#include <assert.h>
+#include "allstates.h"
 
 template <class Q>
 class StateMachine {
@@ -22,8 +22,6 @@ public:
     _previousState(NULL),
     _globalState(NULL)
     {}
-    
-    virtual void Execute() = 0;
     
     void setCurrentState(State<Q>* s){
         _currentState = s;
@@ -46,7 +44,7 @@ public:
         
         _previousState = _currentState;
         _currentState->exit(_owner);
-        _currentState = newState
+        _currentState = newState;
         _currentState->enter(_owner);
     }
     
@@ -57,6 +55,27 @@ public:
     State<Q>* getCurrentState() const { return _currentState; }
     State<Q>* getPreviousState() const { return _previousState; }
     State<Q>* getGlobalState() const { return _globalState; }
+    
+    bool isInState(const State<Q>& st) const
+    {
+        return _currentState == st;
+    }
+    
+    bool handleMessage(const Telegram& msg)
+    {
+        if (_currentState && _currentState->onMessage(_owner, msg))
+        {
+            return true;
+        }
+        
+        if (_globalState && _globalState->onMessage(_owner, msg))
+        {
+            return true;
+        }
+        
+        return false;
+    }
+
     
 private:
     Q *_owner;
