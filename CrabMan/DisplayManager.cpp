@@ -47,7 +47,7 @@ int Window::create(std::string windowName, int screenWidth, int screenHeight, un
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
     SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
-    SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 4);
+    SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 2);
     
     _sdlWindow = SDL_CreateWindow(windowName.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, flags);
     
@@ -61,6 +61,14 @@ int Window::create(std::string windowName, int screenWidth, int screenHeight, un
     SDL_GLContext glContext = SDL_GL_CreateContext(_sdlWindow);
     if(glContext == nullptr){
 //        fatalError("SDL_GL_Context could not be created");
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+        glContext = SDL_GL_CreateContext(_sdlWindow);
+        
+        if (glContext == nullptr) {
+            printf("couldn't create GL_CONTEXT");
+            exit(1);
+        }
     }
     
     glewExperimental = true;

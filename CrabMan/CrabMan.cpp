@@ -46,9 +46,10 @@ void CrabMan::createGameObjects()
     
 //    aPlayer = new Player("res/nanosuit/nanosuit.obj", "", glm::vec3(0,0,0), 0,180,0, 0.5);
 //    aPlayer = new Player("res/dice/Dice_high_poly.obj", "", glm::vec3(0,0,0), 0,0,0, 2);
-    aPlayer = new Player("res/raptor.obj", "", glm::vec3(-5,0,0), 0,0,0, 5);
+    aPlayer = new Player("res/person.obj", "res/playerTexture.png", glm::vec3(-5,0,0), 0,0,0, 1);
     
-    agent = new Vehicle("res/nanosuit/nanosuit.obj", "", glm::vec3(10,0,8), 0,0,0, 1);
+//    agent = new Vehicle("res/nanosuit/nanosuit.obj", "", glm::vec3(10,0,8), 0,0,0, 1);
+    agent = new Vehicle("res/cube.obj", "", glm::vec3(10,0,8), 0,0,0, 5);
     
     agent->setTargetAgent1(aPlayer);
     
@@ -98,7 +99,7 @@ void CrabMan::runGraphicsUpdate()
     skyBoxRenderer->render(camera);
     
     auto fps = std::to_string(roundf(_timeKeeper->getFPS())).erase(4);
-    FontRenderer::sharedInstance()->renderText(fps+" fps", 0.0f, 5.0f, 0.4f, glm::vec3(0.9f, 0.8f, 0.4f));
+    FontRenderer::sharedInstance()->renderText(fps+" fps", 0.0f, 5.0f, 0.4f, glm::vec3(0.9f, 0.0f, 0.1f));
     
     camera->update(_timeKeeper->getDeltaTime());
 }
