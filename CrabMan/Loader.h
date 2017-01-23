@@ -13,15 +13,14 @@
 #include <vector>
 #include <GL/glew.h>
 #include <string>
-#include <assimp/Importer.hpp>
-#include <assimp/scene.h>
-#include <assimp/postprocess.h>
 #include "Model.h"
+#include "maths.h"
+
 
 class Loader{
     
 public:
-    static Model* loadModel(std::string path, std::string textureFile = "");
+    static Model* loadModel(std::string path, std::string textureFile = "", bool convertToUnitTransform = false);
     static Mesh* loadToVAO(std::vector<float> verts, int dimension);
     static int loadCubeMap(std::string textureFiles[]);
     static void bindIndices(std::vector<GLuint> indices);
@@ -37,6 +36,8 @@ private:
     static void processNode(aiNode *node, const aiScene *scene, Model *model);
     static Mesh* processMesh(aiMesh* mesh, const aiScene* scene, Model *model);
     static vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, string typeName, Model* model);
+//    static void transformToUnitCoordinates(Model *model, aiNode* rootNode);
+//    static void findObjectDimensions(Model *model, aiNode* node, glm::mat4 transformation, glm::vec3 &minDimension, glm::vec3 &maxDimension);
 };
 
 #endif /* Loader_h */

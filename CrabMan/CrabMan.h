@@ -45,7 +45,6 @@ private:
     Model *plane;
     Player *aPlayer;
     Vehicle *agent;
-    std::vector<Entity*> _entities;
 };
 
 #endif /* CrabMan_h */

@@ -10,6 +10,7 @@
 
 void EntityManager::registerEntity(Entity *e)
 {
+    _entities.push_back(e);
     _entityMap.insert(std::make_pair(e->ID(), e));
 }
 
@@ -27,4 +28,8 @@ EntityManager* EntityManager::instance()
     static EntityManager *single = new EntityManager();
     
     return single;
+}
+
+std::vector<Entity*>& EntityManager::getEntities() {
+    return _entities;
 }

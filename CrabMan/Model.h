@@ -10,9 +10,7 @@
 #define __nfghdg__Model__
 
 #include <iostream>
-#include <assimp/Importer.hpp>
-#include <assimp/scene.h>
-#include <assimp/postprocess.h>
+#include "maths.h"
 #include "Mesh.h"
 
 class Model {
@@ -27,6 +25,17 @@ public:
     Model(){}
     void addMesh(Mesh* m){meshes.push_back(m);}
     vector<Mesh*> getMeshes() { return meshes; }
+    
+    vector<float> m_vertices;
+    vector<unsigned int> m_indices;
+    
+    void transformToUnitCoordinates(aiNode *rootNode);
+    
+    void findObjectDimensions(aiNode *node, glm::mat4 transformation, glm::vec3 &minDimension, glm::vec3 &maxDimension);
+    
+    float *unitScale = nullptr;
+    glm::vec3 *unitTranslation = nullptr;
+    glm::mat4 *unitTransformation = nullptr;
     
 //    void Draw(Shader shader);
 };

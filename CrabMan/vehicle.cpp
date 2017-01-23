@@ -27,8 +27,6 @@ void Vehicle::update(float dt)
     
     // make sure vehicle does not exceed maximum velocity
     Maths::truncate(m_velocity, m_maxSpeed);
-//    m_velocity = glm::trunc(m_velocity *glm::vec3(m_maxSpeed)) ;
-//    m_velocity = glm::ceil(glm::vec3(m_maxSpeed));
     
     _position += m_velocity * dt;
     
@@ -39,6 +37,7 @@ void Vehicle::update(float dt)
         
 //        std::cout << "\nheading: " << m_heading.x << ", " << m_heading.y << ", " << m_heading.z ;
 //        std::cout << "\nvelocity: " << m_velocity.x << ", " << m_velocity.y << ", " << m_velocity.z ;
+//        std::cout << "\nposition: " << _position.x << ", " << _position.y << ", " << _position.z << endl;
         
         auto ry = glm::degrees(atan2(m_heading.z, m_heading.x));
 //        ry = 90 - ry;
@@ -54,7 +53,12 @@ void Vehicle::setTarget(glm::vec3 target)
     m_steering->setTarget(target);
 }
 
-void Vehicle::setTargetAgent1(MovingEntity* e)
+void Vehicle::setTargetAgent1(Entity* e)
 {
     m_steering->setTargetAgent1(e);
+}
+
+void Vehicle::setTargetAgent2(Entity* e)
+{
+    m_steering->setTargetAgent2(e);
 }

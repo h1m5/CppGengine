@@ -18,6 +18,7 @@ class EntityManager {
     typedef std::map<int, Entity*> EntityMap;
     
     EntityMap _entityMap;
+    std::vector<Entity*> _entities;
     EntityManager(){}
     EntityManager(EntityManager &) {}
     EntityManager& operator=(const EntityManager&);
@@ -29,7 +30,10 @@ public:
     
     Entity* getEntityByID(int id) const;
     
+    std::vector<Entity*>& getEntities();
+    
     void removeEntity(Entity* e);
+    
 };
 
 #define EntityMgr EntityManager::instance()

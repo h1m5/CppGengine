@@ -15,6 +15,7 @@
 #include "particlegravity.h"
 #include "particleworld.h"
 #include "vehicle.h"
+#include "entityManager.hpp"
 
 CrabMan::CrabMan()
 {
@@ -41,20 +42,23 @@ void CrabMan::createGameObjects()
     renderer = new EntityRenderer("res/lighting");
     _window->registerSubscriber(renderer);
     
-    Entity *e1 = new Entity(ResourseManager::getModel("res/field.obj", ""), glm::vec3(-10,-2.5,0), 0,0,0, 2);
-    _entities.push_back(e1);
+    Entity *e1 = new Entity(ResourseManager::getModel("res/field.obj", ""), glm::vec3(0,-2.5,0), 0,0,0, 1);
+    EntityMgr->registerEntity(e1);
     
 //    aPlayer = new Player("res/nanosuit/nanosuit.obj", "", glm::vec3(0,0,0), 0,180,0, 0.5);
 //    aPlayer = new Player("res/dice/Dice_high_poly.obj", "", glm::vec3(0,0,0), 0,0,0, 2);
-    aPlayer = new Player("res/person.obj", "res/playerTexture.png", glm::vec3(-5,0,0), 0,0,0, 1);
+//    aPlayer = new Player("res/person.obj", "res/playerTexture.png", glm::vec3(-5,0,0), 0,0,0, 1);
+    aPlayer = new Player("res/cube.obj", "", glm::vec3(-5,0,0), 0,0,0, 1);
     
 //    agent = new Vehicle("res/nanosuit/nanosuit.obj", "", glm::vec3(10,0,8), 0,0,0, 1);
-    agent = new Vehicle("res/cube.obj", "", glm::vec3(10,0,8), 0,0,0, 5);
-    
+    agent = new Vehicle("res/person.obj", "res/playerTexture.png", glm::vec3(10,0,8), 0,0,0, 1);
+    auto agent2 = new Vehicle("res/dice/Dice_high_poly.obj", "res/playerTexture.png", glm::vec3(30,0,-8), 0,0,0, 2);
     agent->setTargetAgent1(aPlayer);
+    agent->setTargetAgent2(agent2);
     
-    _entities.push_back(aPlayer);
-    _entities.push_back(agent);
+    EntityMgr->registerEntity(aPlayer);
+    EntityMgr->registerEntity(agent);
+    EntityMgr->registerEntity(agent2);
     
     camera = new Camera3D(aPlayer, 30);
     Light *light0 = new Light(glm::vec3(10,700,10), glm::vec3(0.5, 0.6, 0.7));
@@ -91,7 +95,7 @@ void CrabMan::runGraphicsUpdate()
     glEnable(GL_DEPTH_TEST);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    for(Entity *e : _entities) {
+    for(Entity *e : EntityMgr->getEntities()) {
         if(e->getViewingMode()->currentViewModeID == ViewMode::ThirdPerson)
             renderer->render(e, camera, lights);
     }

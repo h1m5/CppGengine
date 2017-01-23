@@ -38,6 +38,7 @@
 		38900FD61CBEF4C1001331A7 /* Timing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38900FD41CBEF4C1001331A7 /* Timing.cpp */; };
 		38900FDC1CBF0F50001331A7 /* entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38900FDA1CBF0F50001331A7 /* entity.cpp */; };
 		389560801CD058E600F802B6 /* thirdpersonviewstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3895607E1CD058E600F802B6 /* thirdpersonviewstate.cpp */; };
+		38A719CB1E2C67D7008465CD /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38A719CA1E2C67D7008465CD /* Model.cpp */; };
 		38C6FE901CBD1800004B3747 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38C6FE8F1CBD1800004B3747 /* main.cpp */; };
 		38C6FE991CBD18BD004B3747 /* DisplayManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38C6FE971CBD18BD004B3747 /* DisplayManager.cpp */; };
 		38C6FE9E1CBD1AFD004B3747 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C6FE9B1CBD19AB004B3747 /* libSDL2-2.0.0.dylib */; };
@@ -88,6 +89,7 @@
 		3823804D1CBDF9D6005B7CDE /* staticshader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = staticshader.h; sourceTree = "<group>"; };
 		382380541CBE0125005B7CDE /* entityrenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entityrenderer.cpp; sourceTree = "<group>"; };
 		382380551CBE0125005B7CDE /* entityrenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entityrenderer.h; sourceTree = "<group>"; };
+		3831417E1E345AB800812F8E /* path.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = path.h; sourceTree = "<group>"; };
 		384F31B71D2DE69400654EBE /* messageDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = messageDispatcher.cpp; sourceTree = "<group>"; };
 		384F31B81D2DE69400654EBE /* messageDispatcher.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = messageDispatcher.hpp; sourceTree = "<group>"; };
 		384F31BA1D2DE71700654EBE /* telegram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = telegram.h; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		38900FDB1CBF0F50001331A7 /* entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entity.h; sourceTree = "<group>"; };
 		3895607E1CD058E600F802B6 /* thirdpersonviewstate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thirdpersonviewstate.cpp; sourceTree = "<group>"; };
 		3895607F1CD058E600F802B6 /* thirdpersonviewstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thirdpersonviewstate.h; sourceTree = "<group>"; };
+		38A719CA1E2C67D7008465CD /* Model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model.cpp; sourceTree = "<group>"; };
 		38C6FE8C1CBD1800004B3747 /* CrabMan */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CrabMan; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C6FE8F1CBD1800004B3747 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		38C6FE971CBD18BD004B3747 /* DisplayManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DisplayManager.cpp; sourceTree = "<group>"; };
@@ -194,6 +197,7 @@
 			children = (
 				382380331CBD3439005B7CDE /* Mesh.h */,
 				382380351CBD3439005B7CDE /* Model.h */,
+				38A719CA1E2C67D7008465CD /* Model.cpp */,
 				38DABA4D1CD01CF80012E9EF /* modelcache.cpp */,
 				38DABA4E1CD01CF80012E9EF /* modelcache.h */,
 			);
@@ -302,6 +306,7 @@
 		388A4A111E22F8DF00008BFF /* steeringbehaviors */ = {
 			isa = PBXGroup;
 			children = (
+				3831417E1E345AB800812F8E /* path.h */,
 				388A4A0E1E22F8DC00008BFF /* steeringbehaviors.cpp */,
 				388A4A0F1E22F8DC00008BFF /* steeringbehaviors.h */,
 			);
@@ -499,6 +504,7 @@
 				388A4A091E22F8C600008BFF /* particleCable.cpp in Sources */,
 				38DABA551CD035A60012E9EF /* firstpersonviewstate.cpp in Sources */,
 				382380431CBDE865005B7CDE /* ResourceManager.cpp in Sources */,
+				38A719CB1E2C67D7008465CD /* Model.cpp in Sources */,
 				3823804B1CBDF72E005B7CDE /* shadercache.cpp in Sources */,
 				382380481CBDED68005B7CDE /* shaderprogram.cpp in Sources */,
 				380142831D6283CA0078035B /* fontShader.cpp in Sources */,

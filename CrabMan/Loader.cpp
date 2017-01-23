@@ -14,7 +14,7 @@
 
 std::vector<GLuint> Loader::vaos;
 
-Model* Loader::loadModel(string path, std::string textureFile)
+Model* Loader::loadModel(string path, std::string textureFile, bool convertToUnitTransform)
 {
     Model *model = new Model;
     Assimp::Importer import;
@@ -50,6 +50,10 @@ Model* Loader::loadModel(string path, std::string textureFile)
         //            model->textures_loaded.push_back(tex);
         //        }
     }
+    
+    if (convertToUnitTransform)
+        model->transformToUnitCoordinates(scene->mRootNode);
+    
     return model;
 }
 
@@ -67,6 +71,7 @@ void Loader::processNode(aiNode *node, const aiScene *scene, Model *model)
     }
 }
 
+int totalIndices = 0;
 Mesh* Loader::processMesh(aiMesh* mesh, const aiScene* scene, Model* model)
 {
     // Data to fill
@@ -74,15 +79,18 @@ Mesh* Loader::processMesh(aiMesh* mesh, const aiScene* scene, Model* model)
     vector<GLuint> indices;
     vector<Texture> textures;
     
+    unsigned indexOffset = totalIndices;
+    unsigned int indexCountBefore = totalIndices;
+    
     // Walk through each of the mesh's vertices
     for(GLuint i = 0; i < mesh->mNumVertices; i++)
     {
         Vertex vertex;
         glm::vec3 vector; // We declare a placeholder vector since assimp uses its own vector class that doesn't directly convert to glm's vec3 class so we transfer the data to this placeholder glm::vec3 first.
         // Positions
-        vector.x = mesh->mVertices[i].x;
-        vector.y = mesh->mVertices[i].y;
-        vector.z = mesh->mVertices[i].z;
+        vector.x = mesh->mVertices[i].x; model->m_vertices.push_back(vector.x);
+        vector.y = mesh->mVertices[i].y; model->m_vertices.push_back(vector.y);
+        vector.z = mesh->mVertices[i].z; model->m_vertices.push_back(vector.z);
         vertex.position = vector;
         // Normals
         vector.x = mesh->mNormals[i].x;
@@ -108,8 +116,10 @@ Mesh* Loader::processMesh(aiMesh* mesh, const aiScene* scene, Model* model)
     {
         aiFace face = mesh->mFaces[i];
         // Retrieve all indices of the face and store them in the indices vector
-        for(GLuint j = 0; j < face.mNumIndices; j++)
+        for(GLuint j = 0; j < face.mNumIndices; j++) {
             indices.push_back(face.mIndices[j]);
+            model->m_indices.push_back(face.mIndices[j]);
+        }
     }
     // Process materials
     Material mmat;
@@ -146,7 +156,10 @@ Mesh* Loader::processMesh(aiMesh* mesh, const aiScene* scene, Model* model)
     
     // Return a mesh object created from the extracted mesh data
     if(hasTexture) hasMaterial = false;
-    return loadToVAO(vertices, indices, textures, hasMaterial, mmat);
+    
+    auto aMesh = loadToVAO(vertices, indices, textures, hasMaterial, mmat);
+    aMesh->indexCount = indices.size() - indexCountBefore;
+    return aMesh;
 }
 
 vector<Texture> Loader::loadMaterialTextures(aiMaterial* mat, aiTextureType type, string typeName, Model* model)

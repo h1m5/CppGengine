@@ -62,11 +62,7 @@ void EntityRenderer::render(Entity *entity, Camera* camera, std::vector<Light*> 
     prepare();
     _shader->start();
     
-    glm::mat4 mMatrix = Maths::createTransformationMatrix(entity->getPosition(),
-                                                          entity->getRotX(),
-                                                          entity->getRotY(),
-                                                          entity->getRotZ(),
-                                                          entity->getScale());
+    glm::mat4 mMatrix = Maths::createTransformationMatrix(entity->getPosition(), entity->getRotX(), entity->getRotY(), entity->getRotZ(), entity->getScale());
     
     _shader->loadSkyColour(RED, GREEN, BLUE);
     _shader->loadModelMatrix(mMatrix);

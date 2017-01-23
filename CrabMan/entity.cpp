@@ -12,12 +12,13 @@
 
 Entity::Entity(Model *model, glm::vec3 position, float rx, float ry, float rz, float scale, int textureIndex) : _viewingMode(ResourseManager::getViewState(ViewMode::ThirdPerson))
 {
+    m_ID = Maths::randomClamped();
     _model = model;
-    _position = position;
+    _position = model->unitTranslation != nullptr ? *model->unitTranslation : position;
     _rx = rx;
     _ry = ry;
     _rz = rz;
-    _scale = scale;
+    _scale = model->unitScale != nullptr ? *model->unitScale : scale;
     _textureIndex = textureIndex;
 }
 

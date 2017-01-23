@@ -36,28 +36,29 @@ struct Material{
 
 class Mesh {
     GLuint VAO;
-    int vertexCount;
     Material _material;
     bool _hasMaterial;
     
 public:
     
-    Mesh(GLuint vao, int vertexCount, std::vector<Texture> textures = std::vector<Texture>(), bool hasMaterial = false, Material mat = Material{})
+    Mesh(GLuint vao, int indexOffset, std::vector<Texture> textures = std::vector<Texture>(), bool hasMaterial = false, Material mat = Material{})
     {
         VAO = vao;
-        this->vertexCount = vertexCount;
+        this->indexOffset = indexOffset;
         this->textures = textures;
         this->_material = mat;
         this->_hasMaterial = hasMaterial;
     }
     
+    int indexOffset;
+    int indexCount;
     void setHasMaterial(bool has) { _hasMaterial = has; }
     
     std::vector<Texture> textures;
     GLuint getVaoID() {return VAO;}
     Material getMaterial() { return _material; }
     bool getHasMaterial() { return _hasMaterial; }
-    int getVertexCount() {return vertexCount;}
+    int getVertexCount() {return indexOffset;}
 };
 
 #endif /* defined(__nfghdg__Mesh__) */

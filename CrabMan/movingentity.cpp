@@ -11,7 +11,8 @@
 MovingEntity::MovingEntity(Model* model, glm::vec3 position, float rx, float ry, float rz, float scale, int textureIndex):
 Entity(model, position, rx, ry, rz, scale, textureIndex)
 {
-    m_maxSpeed = 50;
+    m_maxSpeed = 20;
+    m_velocity = glm::vec3(0.1f);
 }
 
 float MovingEntity::getMaxSpeed() const
